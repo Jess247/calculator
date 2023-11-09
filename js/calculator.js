@@ -4,18 +4,18 @@ const operatorDisplay = document.querySelector('#operator');
 const displayResult = document.querySelector('.display');
 
 let operatorPressed = false;
-let firstOperand = undefined;
-let secondOperand = undefined;
+let firstOperand = '';
+let secondOperand = '';
 let operator = undefined;
 
 const operands = document.querySelectorAll('.operand');
 operands.forEach(operand => {
     operand.addEventListener('click', () => {
         if (operatorPressed === true) {
-            secondOperand = operand.value;
+            secondOperand += operand.value;
             secondOperandDisplay.textContent = secondOperand;
         } else {
-            firstOperand = operand.value;
+            firstOperand += operand.value;
             firstOperandDisplay.textContent = firstOperand;
         }
     });
